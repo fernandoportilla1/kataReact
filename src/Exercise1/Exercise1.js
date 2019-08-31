@@ -26,7 +26,10 @@ export class Exercise1 extends Component {
     return alphabetArray.map((letter, index) => {
       const line = this.rotateStringNspaces(alphabet, index + 1);
       const lineToRender = line.startsWith('a') ? null : line;
-      return <div key={letter + index}>{lineToRender}</div>;
+      if (!lineToRender) {
+        return null;
+      }
+      return <div key={letter + index}>{index + 1 + ': ' + lineToRender}</div>;
     });
   }
 }
