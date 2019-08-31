@@ -10,16 +10,16 @@ gcloud auth activate-service-account ${ACCOUNT_ID} --key-file ${HOME}/gcloud-ser
 
 gcloud config set project coding-dojo-251421
 
-gcloud --quiet config set container/cluster coding-dojo
+gcloud --quiet config set container/cluster coding-dojo-juanjimenez
 
-gcloud config set compute/zone us-central1-b
+gcloud config set compute/zone us-central1-a
 
-gcloud --quiet container clusters get-credentials coding-dojo
+gcloud --quiet container clusters get-credentials coding-dojo-juanjimenez
 
 docker build -t gcr.io/coding-dojo-251421/coding-dojo:$CIRCLE_SHA1 .
 
 gcloud docker -- push gcr.io/coding-dojo-251421/coding-dojo:$CIRCLE_SHA1
 
-kubectl set image deployment/coding-dojo coding-dojo=gcr.io/coding-dojo-251421/coding-dojo:$CIRCLE_SHA1
+kubectl set image deployment/coding-dojo-juanjimenez coding-dojo=gcr.io/coding-dojo-251421/coding-dojo:$CIRCLE_SHA1
 
 echo " Successfully deployed"
