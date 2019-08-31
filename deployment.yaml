@@ -33,9 +33,9 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: gcr.io/coding-dojo-251421/coding-dojo:0.1.0
-        name: coding-dojo
-        env:
-        ports:
-        - containerPort: 3000
+        - image: gcr.io/coding-dojo-251421/coding-dojo:0.1.0-fernandop
           name: coding-dojo
+          env:
+          ports:
+            - containerPort: 3000
+              name: coding-dojo
