@@ -47,7 +47,6 @@ class Exercise2 extends Component {
     for (let j = 0; j < wordIndexes.length; j += 1) {
       originalMessage += ALPHABET[wordIndexes[j]];
     }
-    console.log(originalMessage);
     event.preventDefault();
     this.setState({message: originalMessage});
     return originalMessage;
