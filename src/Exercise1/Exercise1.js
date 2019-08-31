@@ -7,11 +7,27 @@ export class Exercise1 extends Component {
   }
   
   render() {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     return (
       <div className="container">
-        Exercise1 page
+        {this.renderAllLines(alphabet)}
       </div>
     );
+  }
+
+  rotateStringNspaces(alphabet, spaces) {
+    const sufix = alphabet.substring(0, spaces);
+    const prefix = alphabet.substring(spaces, alphabet.length);
+    return prefix + sufix;
+  }
+
+  renderAllLines(alphabet) {
+    const alphabetArray = alphabet.split('');
+    return alphabetArray.map((letter, index) => {
+      const line = this.rotateStringNspaces(alphabet, index + 1);
+      const lineToRender = line.startsWith('a') ? null : line;
+      return <div key={letter + index}>{lineToRender}</div>;
+    });
   }
 }
 
