@@ -7,10 +7,10 @@ export class Exercise1 extends Component {
   }
   
   render() {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     return (
       <div className="container">
-        {this.renderAllLines(alphabet)}
+        {this.renderAllLines(ALPHABET)}
       </div>
     );
   }

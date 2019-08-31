@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 class Exercise2 extends Component {
   constructor(props) {
     super(props);
