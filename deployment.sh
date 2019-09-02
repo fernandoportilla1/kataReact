@@ -12,7 +12,7 @@ gcloud config set project coding-dojo-251421
 
 gcloud --quiet config set container/cluster coding-dojo-fernandop
 
-gcloud config set compute/zone us-central1-b
+gcloud config set compute/zone us-central1-a
 
 gcloud --quiet container clusters get-credentials coding-dojo-fernandop
 
